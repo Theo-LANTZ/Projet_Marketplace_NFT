@@ -1,0 +1,8 @@
+<a [routerLink]="['/login']" *ngIf="!isLoggedIn"><button mat-button>Se connecter</button></a>
+<a [routerLink]="['/accueil']"><button mat-button>Page d'accueil</button></a>
+<a [routerLink]="['/vente']"><button mat-button>Achat/Vente</button></a>
+<a [routerLink]="['/mynft']" *ngIf="isLoggedIn"><button mat-button>Mes NFT</button></a>
+<a href (click)="logout()" *ngIf="isLoggedIn"><button mat-button >Se déconnecter</button></a>
+<a routerLink="/register" *ngIf="!isLoggedIn"><button mat-button>S'inscrire</button></a>
+
+<router-outlet></router-outlet>

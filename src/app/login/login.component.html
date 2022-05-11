@@ -1,0 +1,40 @@
+<div>
+    <div class="card card-container">
+        <img id="profile-img" src="../../assets/avatar.png" class="profile-img-card" />
+        <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" name="username" class="input" [(ngModel)]="form.username" required
+                    #username="ngModel" />
+                <div role="alert" class="alert danger" *ngIf="username.errors && f.submitted">
+                    Vous devez renseignez votre prenom!
+                </div>
+            </div>
+
+            <div>
+                <label for="password" class="label">Password</label>
+                <input type="password" name="password" class="input" [(ngModel)]="form.password" required minlength="6"
+                    #password="ngModel" />
+                <div role="alert" class="alert danger" *ngIf="password.errors && f.submitted">
+                    <div *ngIf="password.errors?.['required']">Veuillez renseignez un mot de passe !</div>
+                    <div *ngIf="password.errors?.['minlength']">
+                        Le mot de passe doit être d'au moins 6 caractères
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div role="alert" class="alert danger" *ngIf="f.submitted && isLoginFailed">
+                    email ou mot de passe invalide.
+                </div>
+            </div>
+            <div>
+                <button class="box__button">
+                    Login
+                </button>
+            </div>
+        </form>
+        <div class="alert success" *ngIf="isLoggedIn">
+            Vous êtes connecté !
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h1 class="title">MarketPlace de NFT</h1>
+<div *ngFor="let oeuvres of oeuvre" class="nft">
+<mat-card class="card" *ngIf="oeuvres.afficher">
+    <mat-card-header>
+      <mat-card-title>Malo</mat-card-title>
+      <mat-card-subtitle>60000000 Likes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <audio controls *ngIf="oeuvres.type=='son'">
+        <source src="../assets/{{oeuvres.valeur}}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <img *ngIf="oeuvres.type=='img'" src="../assets/{{oeuvres.valeur}}" class="image">
+      <p *ngIf="oeuvres.type=='txt'">{{oeuvres.valeur}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="Like()">LIKE</button>
+      <button mat-raised-button (click)="Dislike()">DISLIKE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

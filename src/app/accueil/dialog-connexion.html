@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Attention ! Vous devez être connecté pour pouvoir liker/disliker une oeuvre</h1>
+<hr>
+<div mat-dialog-actions>
+  <button class="box__button" mat-button (click)="onNoClick()">Annuler</button>
+  <button class="box__button" style="margin-left:15px;" mat-button (click)="login()">Se connecter</button>
+</div>
+
+<style>
+.box__button:hover {
+    background: transparent;
+    border-color: black;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .box__button {
+    display: inline-block;
+    color: white;
+    position: relative;
+    background: lightblue;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+     font-size: 18px;
+    padding: 0 60px;
+    white-space: nowrap;
+    margin-top: 25px;
+    transition: background 0.5s ease;
+  }
+  .box__button:disabled,
+  .box__button[disabled]{
+    background-color: #cccccc;
+    color: #666666;
+    border: 1px solid #999999;
+  }
+</style>

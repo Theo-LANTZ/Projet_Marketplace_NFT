@@ -1,0 +1,52 @@
+<div class="body">
+    <div class="card card-container">
+      <img id="profile-img" src="../../assets/avatar.png" class="profile-img-card" />
+      <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div>
+          <label for="username">Nom du nouvel utilisateur :</label>
+          <input type="text" class="input" name="username" [(ngModel)]="form.username" required minlength="3"
+            maxlength="20" #username="ngModel" />
+          <div class="alert-danger" *ngIf="username.errors && f.submitted">
+            <div *ngIf="username.errors?.['required']">Veuillez renseigner un pseudo utilisateur</div>
+            <div *ngIf="username.errors?.['minlength']">
+              Le pseudo doit être d'au moins 3 caractères
+            </div>
+            <div *ngIf="username.errors?.['maxlength']">
+              Le pseudo ne doit pas dépasser 20 caractères
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="email">Email :</label>
+          <input type="email" class="input" name="email" [(ngModel)]="form.email" required email
+            #email="ngModel" />
+          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors?.['required']">Une addresse mail est nécéssaire</div>
+            <div *ngIf="email.errors?.['email']">
+              L'addresse mail doit être dans un format valide
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="password">Mot de passe :</label>
+          <input type="password" class="input" name="password" [(ngModel)]="form.password" required minlength="6"
+            #password="ngModel" />
+          <div class="alert-danger" *ngIf="password.errors && f.submitted">
+            <div *ngIf="password.errors?.['required']">Vous devez renseigner le mot de passe</div>
+            <div *ngIf="password.errors?.['minlength']">
+              Le mot de passe doit être d'au moins 6 caractères
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="box__button">Enregistrer</button>
+        </div>
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+          L'enregistrement a échoué !<br />{{ errorMessage }}
+        </div>
+      </form>
+      <div class="alert alert-success" *ngIf="isSuccessful">
+        Utilisateur bien enregistré !
+      </div>
+    </div>
+  </div>
