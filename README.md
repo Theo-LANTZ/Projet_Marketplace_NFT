@@ -1,7 +1,8 @@
-# NFTFrontN
+# Prérequis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Pour le front vous devrez avoir installé le framework angular, une fois ceci fait vous devrez modifier les fichier "actions.service.ts" "auth.service.ts" "oeuvres.service.ts" en modifiant la variable url par l'adresse IPV4 de votre ordinateur actuel, mais conservez le port 3001.
 
-## Development server
+# Execution front
 
-Une fois le dossier téléchargé, ouvrez un terminal et tappez : `ng serve` pour lancer le serveur de developpement. Rendez vous à l'adresse `http://localhost:4200/` sur un navigateur.
+Une fois les modifications faites, vous n'avez plu qu'à lancer le serveur en executant la commande avec le CLI angular : ng serve
+Vous n'avez plus qu'à vous rendre sur le navigateur de votre choix et de vous rendre a l'adresse http://localhost:4200.
