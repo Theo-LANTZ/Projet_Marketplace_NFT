@@ -29,6 +29,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OeuvreService } from './services/oeuvres.service';
 import { ActionService } from './services/actions.service';
+import { ValidationComponent } from './validation/validation.component';
 
 
 @NgModule({
@@ -39,10 +40,12 @@ import { ActionService } from './services/actions.service';
     RegisterComponent,
     VenteComponent,
     MesNftComponent,
+    ValidationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatFormFieldModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatDialogModule,
@@ -51,11 +54,11 @@ import { ActionService } from './services/actions.service';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule,
     HttpClientModule,
     ToastrModule.forRoot(),
   ],
   providers: [TokenStorageService,AuthService, ToastrService,OeuvreService, ActionService],
   bootstrap: [AppComponent],
+  entryComponents:[ValidationComponent],
 })
 export class AppModule { }

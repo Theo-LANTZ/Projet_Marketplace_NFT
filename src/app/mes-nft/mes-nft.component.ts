@@ -3,11 +3,7 @@ import { Oeuvre } from '../interfaces/oeuvres.interface';
 import { OeuvreService } from '../services/oeuvres.service';
 import { TokenStorageService } from '../services/token-storage.service';
 import { MatDialog} from '@angular/material/dialog';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import { ValidationComponent } from '../validation/validation.component';
 
 @Component({
   selector: 'app-mes-nft',
@@ -16,7 +12,7 @@ export interface DialogData {
 })
 export class MesNftComponent implements OnInit {
   isLoggedIn = false;
-  oeuvre : Oeuvre[] | undefined;
+  oeuvre!: Oeuvre[];
   currentUser: any;
   animal!:string;
   name!:string;
@@ -35,18 +31,7 @@ export class MesNftComponent implements OnInit {
     });
   }
 
-  openDialog() {
-    this.dialog.open(validationComponent);
-  }
-}
-
-@Component({
-  selector: 'validation-component',
-  templateUrl: 'validation-component.html',
-})
-export class validationComponent{
-  name:string = '';
-  sellnft(){
-    console.log()
+  openDialog(){
+    this.dialog.open(ValidationComponent);
   }
 }
