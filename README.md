@@ -1,6 +1,6 @@
 # Prérequis
 
-Pour le front vous devrez avoir installé le framework angular, une fois ceci fait vous devrez modifier les fichier "actions.service.ts" "auth.service.ts" "oeuvres.service.ts" en modifiant la variable url par l'adresse IPV4 de votre ordinateur actuel, mais conservez le port 3001.
+Pour le front vous devrez avoir installé le framework [angular](https://angular.io/guide/setup-local), une fois ceci fait vous devrez modifier les fichier "actions.service.ts" "auth.service.ts" "oeuvres.service.ts" en modifiant la variable url par l'adresse IPV4 de votre ordinateur actuel, mais conservez le port 3001.
 
 # Execution front
 
