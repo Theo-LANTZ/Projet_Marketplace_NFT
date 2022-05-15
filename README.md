@@ -4,5 +4,5 @@ Pour le front vous devrez avoir installé le framework [angular](https://angular
 
 # Execution front
 
-Une fois les modifications faites, vous n'avez plu qu'à lancer le serveur en executant la commande avec le CLI angular : ng serve
+Une fois les modifications faites, vous n'avez plus qu'à lancer le serveur en executant la commande avec le CLI angular : ng serve
 Vous n'avez plus qu'à vous rendre sur le navigateur de votre choix et de vous rendre a l'adresse http://localhost:4200.
