@@ -1,0 +1,7 @@
+<form #newvente="ngForm">
+    <label for="prix">
+        Prix de l'oeuvre
+    </label>
+    <input type="number" name="prix" [(ngModel)]="vente.prix" required>
+    <button class="box__button" type="submit" (click)="createVente(vente)">Vendez !</button>
+</form>
